@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { SwiperModule } from 'swiper/angular';
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { TodayPageRoutingModule } from './today-routing.module';
 
-import { FolderPage } from './folder.page';
+import { TodayPage } from './today.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    TodayPageRoutingModule,
+    SwiperModule
   ],
-  declarations: [FolderPage]
+  declarations: [TodayPage]
 })
-export class FolderPageModule {}
+export class TodayPageModule {}

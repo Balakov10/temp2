@@ -1,0 +1,61 @@
+<div class="flex-center">
+
+  <swiper [config]="swiperConfig">
+    <ng-template *ngFor=" let i = index; let dias of timeDay;" swiperSlide>
+        <ion-card>
+          <div class="flex-center">
+
+            <ion-card-header>
+              <ion-item lines="none">
+
+                <ion-card-subtitle>{{currentTime| date :'short'}}</ion-card-subtitle>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-icon name="location"></ion-icon>
+                <ion-card-title>{{location.name}}</ion-card-title>
+              </ion-item>
+
+            </ion-card-header>
+          </div>
+
+
+          <ion-card-content>
+            <div class="flex-center">
+
+              <img src="https://openweathermap.org/img/wn/{{dias.day1[i].icon}}@2x.png">
+
+              <ion-item lines="none">
+                TEMP - {{dias.day1[i].maintemp | number: '1.0-0'}}ºC
+              </ion-item>
+
+            </div>
+
+            <ion-item lines="none">
+
+            </ion-item>
+            <div class="flex-center">
+              <ion-item>
+                <h1>3Hours Forecast</h1>
+              </ion-item>
+            </div>
+
+            <ion-item lines="none">
+              <div class="timeline">
+
+                <div>{{dias.day1[i].time | date:'HH:mm'}}</div>
+                <div>{{dias.day1[i].temp | number: '1.0-0'}}ºC</div>
+
+              </div>
+            </ion-item>
+
+
+          </ion-card-content>
+        </ion-card>
+      </ng-template>
+
+
+    </swiper>
+  </div>
+
+
+
